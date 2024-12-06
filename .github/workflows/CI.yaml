@@ -35,8 +35,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: azizdhoukar
-          password: dckr_pat_f4szj9gJ7kku6kw0Fl3zoReo_QA
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
 
       - name: Build Docker image
         run: docker build -t azizdhoukar/ps5:MQ .

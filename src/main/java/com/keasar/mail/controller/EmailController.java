@@ -1,6 +1,7 @@
 package com.keasar.mail.controller;
 
 
+import com.keasar.mail.model.MailDTO;
 import com.keasar.mail.service.EmailProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,7 @@ public class EmailController {
     private final EmailProducer emailProducer;
 
     @PostMapping("/send-email")
-    public void sendEmail(@RequestBody String emailDetails) {
+    public void sendEmail(@RequestBody MailDTO emailDetails) {
         emailProducer.sendEmailMessage(emailDetails);
     }
 }
-
